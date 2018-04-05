@@ -7,8 +7,8 @@ const app = express();
 
 app.use(express.static('dist'));
 
-app.get('/btc', (req, res) => {
-  // console.log(`${req.method} received from ${req.url}`)
+app.get('/', (req, res) => {
+  console.log(`${req.method} received from ${req.url}`)
 
   axios.get('https://api.coindesk.com/v1/bpi/historical/close.json')
     .then((response) => {
