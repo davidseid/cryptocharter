@@ -29,9 +29,24 @@ const data = {
 };
 
 const Chart = (props) => {
+  
+  const bpiData = {
+    labels: [],
+    datasets: [
+      {
+        data: []
+      }
+    ]
+  };
+
+  for (let key in props.data.bpi) {
+    bpiData.labels.push(key);
+    bpiData.datasets[0].data.push(props.data.bpi[key]);
+  }
+
   return (
     <div>
-      <Line data={data} />
+      <Line data={bpiData} />
     </div>
   )
 }
