@@ -8,7 +8,7 @@ class App extends React.Component {
     super(props)
 
     this.state = {
-      indexHistory: null
+      indexHistory: {}
     }
   }
 
@@ -28,7 +28,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Chart />
+        <Chart data={this.state.indexHistory} />
       </div>
     )
   }
