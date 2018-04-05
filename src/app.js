@@ -14,15 +14,15 @@ class App extends React.Component {
 
   componentDidMount() {
     axios.get('https://api.coindesk.com/v1/bpi/historical/close.json')
-    .then((response) => {
-      console.log(response.data);
-      this.setState({
-        indexHistory: response.data
+      .then((response) => {
+        console.log(response.data);
+        this.setState({
+          indexHistory: response.data
+        });
+      })
+      .catch((error) => {
+        console.error(error);
       });
-    })
-    .catch((error) => {
-      console.error(error);
-    });
   }
 
   render() {
